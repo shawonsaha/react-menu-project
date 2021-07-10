@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const Categories = () => {
-  return <h2>categories component</h2>;
+const Categories = ({ filterItems, categories }) => {
+  // console.log(filterCategories);
+
+  return (
+    <div className="btn-container">
+      {categories.map((category, index) => {
+        return (
+          <button
+            key={index}
+            type="button"
+            className="filter-btn"
+            onClick={() => filterItems(category)}>
+            {category}
+          </button>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Categories;
